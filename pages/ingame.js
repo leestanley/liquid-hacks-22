@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from '../styles/InGame.module.scss';
+import Header from './components/common/header/header.jsx';
 import Camera from './components/ingame/camera.jsx';
 
 export default function InGame() {
@@ -16,6 +17,7 @@ export default function InGame() {
 
   return (
     <div className={styles.container}>
+      <Header />
       <Camera
         setData={setData}
         setEmotions={setEmotions}
