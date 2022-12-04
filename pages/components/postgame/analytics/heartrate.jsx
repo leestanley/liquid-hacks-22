@@ -4,7 +4,10 @@ import styles from '../../../../styles/components/postgame/analytics/HeartRate.m
 
 const HeartRate = ({ data }) => (
   <div className={styles.container}>
-        <h1>test</h1>
+    <div className={styles.header}>
+      <h2>Average Heart Rate</h2>
+      <p>75BPM per game</p>
+    </div>
   </div>
 );
 

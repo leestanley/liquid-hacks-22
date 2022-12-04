@@ -4,7 +4,10 @@ import styles from '../../../../styles/components/postgame/analytics/Toxicity.mo
 
 const Toxicity = ({ data }) => (
   <div className={styles.container}>
-    <h1>test</h1>
+    <div className={styles.header}>
+      <h2>Toxicity Score</h2>
+      <p>Based off voice recordings</p>
+    </div>
   </div>
 );
 
