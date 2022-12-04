@@ -1,0 +1,63 @@
+.container {
+  margin-top: 0;
+  background: url('/banner.png');
+  height: calc(100% - 3.125rem);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative; 
+  z-index: 1;
+}
+
+.navigator {
+  position: absolute;
+  bottom: 1rem;
+  margin: 0 5%;
+  width: 90%;
+  height: 50px;
+
+  h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #464646;
+    z-index: 501;
+    display: inline-block;
+    margin-right: 1rem;
+    font-weight: 300;
+    transition-duration: 0.5s;
+
+    &:hover {
+      color: white !important;
+    }
+  }
+}
+
+.active {
+  font-weight: 600 !important;
+  color: white !important;
+  position: relative;
+
+  &::after {
+    content: '';
+    height: 0.2rem;
+    width: 100%;
+    top: calc(50px - 0.15rem);
+    left: 0;
+    position: absolute;
+    background-color: white;
+    display: inline-block;
+  }
+}
+
+.line {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 0.1rem;
+  background: linear-gradient(90deg, #FFFFFF -0.47%, #02123C 100%);
+}
+
+@media only screen and (max-width: 1200px) {
+  .navigator {
+    text-align: center;
+  }
+}

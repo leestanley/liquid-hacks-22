@@ -2,6 +2,7 @@
   background: #090F1B;
   height: 3.125rem;
   width: 100%;
+  z-index: 1000;
 }
 
 .logo {
@@ -16,6 +17,8 @@
 }
 
 .centerButton {
+  z-index: 10000;
+
   height: 4.438rem;
   width: 14.625rem;
   position: absolute;
