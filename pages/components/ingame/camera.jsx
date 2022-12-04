@@ -1,5 +1,6 @@
 import React from 'react';
-import Webcam from "react-webcam";
+import Webcam from 'react-webcam';
+import SmileyIcon from './assets/smiley.svg';
 
 import styles from '../../../styles/components/ingame/Camera.module.scss';
 
@@ -308,9 +309,9 @@ const Camera = (props) => {
             // Set the gradient for the canvas rectangle.
             // For the aesthetic!
             const gradient = context.createLinearGradient(0, 0, canvas.width, 0);
-            gradient.addColorStop("0", "#FFFFFF");
-            gradient.addColorStop("0.5", "#FFFFFF");
-            gradient.addColorStop("1", "#FFFFFF");
+            gradient.addColorStop("0", "#D7283D");
+            gradient.addColorStop("0.5", "#D7283D");
+            gradient.addColorStop("1", "#D7283D");
 
             // Set the context's line properties
             context.lineWidth = "6";
@@ -385,27 +386,36 @@ const Camera = (props) => {
 
 
   return (
-    <div className={styles.container}>
-      <canvas
-        ref={canvasRef}
-        className={styles.mainCanvas}
-        height={VIDEO_HEIGHT}
-        width={VIDEO_WIDTH}
-      />
-      <canvas ref={imageCanvasRef}
-        className={styles.imageCanvas}
-        height={VIDEO_HEIGHT}
-        width={VIDEO_WIDTH}
-      />
-      <img ref={imageRef} />
-      <Webcam
-        audio={false}
-        height={VIDEO_HEIGHT}
-        ref={webcamRef}
-        screenshotFormat="image/jpeg"
-        width={VIDEO_WIDTH}
-        videoConstraints={VIDEO_CONSTRAINTS}
-      />
+    <div className={styles.outerContainer}>
+      <div className={styles.container}>
+        <div className={styles.emotions}>
+          <img src={SmileyIcon} alt="emotions"/>
+          <div className={styles.detected}>
+            <h3>{emotion.charAt(0).toUpperCase() + emotion.slice(1)}</h3>
+            <p>Detected</p>
+          </div>
+        </div>
+        <canvas
+          ref={canvasRef}
+          className={styles.mainCanvas}
+          height={VIDEO_HEIGHT}
+          width={VIDEO_WIDTH}
+        />
+        <canvas ref={imageCanvasRef}
+          className={styles.imageCanvas}
+          height={VIDEO_HEIGHT}
+          width={VIDEO_WIDTH}
+        />
+        <img ref={imageRef} />
+        <Webcam
+          audio={false}
+          height={VIDEO_HEIGHT}
+          ref={webcamRef}
+          screenshotFormat="image/jpeg"
+          width={VIDEO_WIDTH}
+          videoConstraints={VIDEO_CONSTRAINTS}
+        />
+      </div>
     </div>
   );
 }
