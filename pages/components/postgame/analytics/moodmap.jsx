@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import React from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
+import KeyGraphic from './assets/key.svg';
 import MoodIcon from './assets/mood_icon.svg';
 
 import styles from '../../../../styles/components/postgame/analytics/MoodMap.module.scss';
@@ -12,6 +13,7 @@ const MoodMap = (props) => (
       <h2>Mood Analytics</h2>
       <p>Based off camera and voice based analysis</p>
     </div>
+    <img src={KeyGraphic} className={styles.key} />
     <div className={styles.timeLine}>
       <div className={styles.line}></div>
       <div className={styles.lineMarkers}>
