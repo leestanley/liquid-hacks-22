@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-basis: 50%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 3rem 2.5% 3rem 5%;
+  align-self: start;  
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    padding: 3rem 2.5% 1.5rem 2.5%;
+    flex-basis: 100%;
+  }
+}

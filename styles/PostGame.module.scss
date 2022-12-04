@@ -1,3 +1,5 @@
-.testHeading2 {
-  color: red;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  grid-template-rows: 50% 50%;
 }

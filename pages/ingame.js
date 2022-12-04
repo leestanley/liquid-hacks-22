@@ -14,7 +14,6 @@ export default function InGame() {
   });
   const [data, setData] = React.useState([]);
 
-
   return (
     <div className={styles.container}>
       <Camera

@@ -1,0 +1,33 @@
+.container {
+  padding: 3rem 5% 3rem 2.5%;
+  flex-basis: 50%;
+
+  .innerContainer {
+    position: relative;
+    height: 1000px;
+    padding-top: 5px;
+  }
+
+  .innerContainer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    inset: 0;
+    border-radius: 15px; 
+    padding: 3px; 
+    background: linear-gradient(239.43deg, rgba(127, 25, 207, 0.25) 4.75%, rgba(58, 182, 199, 0.154167) 37.03%, rgba(26, 132, 230, 0) 88.96%) border-box;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+            mask-composite: exclude; 
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    flex-basis: 100%;
+    padding: 1.5rem 2.5% 3rem 2.5%;
+  }
+}

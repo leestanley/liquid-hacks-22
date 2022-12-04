@@ -1,6 +1,7 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React from 'react';
 import Webcam from "react-webcam";
-import styles from '../../../styles/components/Camera.module.scss';
+
+import styles from '../../../styles/components/ingame/Camera.module.scss';
 
 // NPM imports to essentially mimic numpy in JavaScript.
 const cwise = require('cwise');
@@ -273,17 +274,15 @@ function mean(array) {
 
 /** ========== END HELPER FUNCTIONS ========== **/
 
-
-
 const Camera = (props) => {
-  const imageRef = useRef(null);
-  const canvasRef = useRef(null);
-  const imageCanvasRef = useRef(null);
-  const webcamRef = useRef(null);
+  const imageRef = React.useRef(null);
+  const canvasRef = React.useRef(null);
+  const imageCanvasRef = React.useRef(null);
+  const webcamRef = React.useRef(null);
 
-  const [emotion, setCurrentEmotion] = useState('neutral');
+  const [emotion, setCurrentEmotion] = React.useState('neutral');
 
-  useEffect(() => {
+  React.useEffect(() => {
 
     Promise.all([
       faceapi.nets.tinyFaceDetector.loadFromUri('/models'),

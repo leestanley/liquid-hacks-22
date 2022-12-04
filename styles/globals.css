@@ -2,8 +2,13 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: white;
+  font-family: Kanit, sans-serif;
+  background: linear-gradient(151.48deg, #010C14 41.09%, #061E30 87.76%);
+  background-color: #061E30;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-image: url("/postgame_stars.png"), linear-gradient(151.48deg, #010C14 41.09%, #061E30 87.76%);
 }
 
 a {
