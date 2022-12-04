@@ -1,5 +1,8 @@
-import '../styles/globals.css'
+import React from 'react';
 import { Kanit } from '@next/font/google';
+import UserContext from './contexts/UserContext';
+
+import '../styles/globals.css';
 
 const kanit = Kanit({
   weight: ['300', '400', '500', '600'],
@@ -7,10 +10,14 @@ const kanit = Kanit({
 })
 
 function MyApp({ Component, pageProps }) {
+  const [user, setUser] = React.useState();
+
   return (
-    <main className={kanit.className}>
-      <Component {...pageProps} />
-    </main>
+    <UserContext.Provider value={{ user, setUser }}>
+      <main className={kanit.className}>
+        <Component {...pageProps} />
+      </main>
+    </UserContext.Provider>
   )
 }
 
