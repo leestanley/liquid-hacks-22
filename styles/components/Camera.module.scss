@@ -1,0 +1,37 @@
+.container {
+  position: absolute;
+  bottom: 140px;
+  border-radius: 30px;
+  left: 20px;
+  height: calc(85% - 150px);
+  overflow: hidden;
+  width: 65vw;
+
+  video {
+    position: absolute;
+    left: 0;
+    object-fit: cover;
+    top: 0;
+    width: 65vw;
+    height: 100%;
+  }
+
+  img {
+    display: none;
+    position: absolute;
+  }
+}
+
+.mainCanvas {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  object-fit: cover;
+  top: 0;
+  width: 65vw;
+  z-index: 2;
+}
+
+.imageCanvas {
+  display: none;
+}

@@ -1,4 +1,4 @@
-import styles from '../styles/PostGame.module.scss'
+import styles from '../styles/PostGame.module.scss';
 
 export default function PostGame() {
   return (
