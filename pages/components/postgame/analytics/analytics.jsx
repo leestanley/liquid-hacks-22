@@ -7,7 +7,10 @@ import styles from '../../../../styles/components/postgame/analytics/Analytics.m
 const Analytics = (props) => {
   return (
     <div className={styles.container}>
-      <Moodmap />
+      <Moodmap
+        startDate={props.startDate}
+        endDate={[props.endDate]}
+      />
       <Statistics />
     </div>
   );

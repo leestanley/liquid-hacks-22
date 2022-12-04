@@ -8,7 +8,9 @@ export default function PostGame() {
   return (
     <div className={styles.container}>
       <Header />
-      <Analytics />
+      <Analytics
+        startDate={'10.23.2022'}
+        endDate={'10.24.2022'}/>
       <History />
     </div>
   )

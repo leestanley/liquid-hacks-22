@@ -2,6 +2,9 @@
   aspect-ratio: 2 / 1;
   width: 100%;
   position: relative;
+  background-image: url('/moodmap_background.png');
+  background-size: contain;
+background-repeat: no-repeat;
 }
 
 .container::before {
@@ -48,4 +51,37 @@
     font-weight: 300;
     font-size: 0.9rem;
   }
+}
+
+.timeLine {
+  position: absolute;
+  bottom: 0;
+  height: 3rem;
+  width: 100%;
+  text-align: center;
+}
+
+.lineMarkers {
+  display: flex;
+  margin: 0.2rem 5% 0 5%;
+  justify-content: space-between;
+  align-items: center;
+
+  p {
+    margin: 0;
+    font-weight: 300;
+    font-size: 0.9rem;
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+}
+
+.line {
+  height: 0.2rem;
+  margin: 0 5%;
+  background: linear-gradient(270deg, #FFFFFF 1.11%, rgba(248, 248, 247, 0.966449) 4.68%, rgba(52, 41, 18, 0) 107.48%);
 }
