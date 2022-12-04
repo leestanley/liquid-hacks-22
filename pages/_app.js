@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import { Kanit } from '@next/font/google';
 
 const kanit = Kanit({
-  weight: '500',
+  weight: ['300', '500'],
   subsets: ['latin'],
 })
 

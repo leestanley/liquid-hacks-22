@@ -20,3 +20,32 @@
   -webkit-mask-composite: xor;
           mask-composite: exclude; 
 }
+
+.header {
+  padding-left: 1.4rem;
+  padding-top: 1rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  img {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 0.3rem;
+    height: 1.5rem;
+  }
+
+  h2 {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  p {
+    color: #606060;
+    margin: 0;
+    font-weight: 300;
+    font-size: 0.9rem;
+  }
+}

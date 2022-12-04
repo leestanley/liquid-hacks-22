@@ -21,6 +21,7 @@
     "ndarray-linspace": "^1.0.2",
     "ndarray-ops": "^1.2.2",
     "next": "^13.0.6",
+    "next-images": "^1.8.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-webcam": "^7.0.1",
