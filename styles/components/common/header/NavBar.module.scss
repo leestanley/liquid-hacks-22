@@ -8,6 +8,46 @@
   z-index: 1;
 }
 
+.name {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 5%;
+  top: 7.5%;
+
+
+
+  .col {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 32px;
+    h1 {
+      font-size: 48px;
+      margin-left: 1rem;
+      margin-bottom: 0px;
+      line-height: 48px;
+    }
+
+    span {
+      margin: 0px;
+      margin-left: 1rem;
+    }
+  }
+}
+
+.imagewrapper {
+  height: 75px;
+  width: 75px;
+  border-radius: 50%;
+  border: 10px white solid;
+
+}
+
+.icon {
+  border-radius: 50%;
+  border: 5px white solid;
+}
+
 .navigator {
   position: absolute;
   bottom: 1rem;
