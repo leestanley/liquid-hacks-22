@@ -8,7 +8,6 @@ import styles from '../../../styles/components/ingame/HeartDisplay.module.scss';
 const HeartDisplay = (props) => {
 
   const data = React.useMemo(() => {
-    console.log(props.plot);
       const newData = [];
       props.plot.slice(Math.max(props.plot.length - 10, 0)).forEach((value, index) => {
         newData.push([index, parseInt(value)])
