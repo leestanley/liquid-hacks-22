@@ -25,7 +25,7 @@ const TopBar = (props) => {
   }
   return (
     <div className={styles.container}>
-      <Link href="/postgame">
+      <Link href="/">
         <img className={styles.logo} src={Logo} alt="logo"/>
       </Link>
       <Link href="/ingame">
