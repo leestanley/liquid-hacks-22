@@ -337,7 +337,10 @@ const Camera = (props) => {
               // We can only clear the rectangle, AFTER saving the image data so that we can use the image data
               // To calculate the heart rate.
               imageContext.clearRect(0, 0, imageCanvas.width, imageCanvas.height);
-              heartRate = Math.floor(updateHeartRate(imageData.data)) || 70;
+              console.log('HERE SHOULD BE THE REAL HEART RATE');
+              const testHeartRate = updateHeartRate(imageData.data);
+              console.log(testHeartRate);
+              heartRate = Math.floor(testHeartRate) || 70;
             }
           }
         }
@@ -350,6 +353,7 @@ const Camera = (props) => {
 
       // Interval to update emotions.
       emotionCycle = setInterval(async () => {
+        console.log('one heart rate');
         console.log(heartRate);
         const video = document.getElementsByTagName('video')[0];
         if (video) {
@@ -380,9 +384,6 @@ const Camera = (props) => {
           }
         }
         props.setData( data => {
-          console.log('PROPS');
-          console.log('SHOULD BE FINE');
-          console.log(data);
           const newData = [...data];
           newData.push(heartRate);
           return newData;
