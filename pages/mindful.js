@@ -20,20 +20,20 @@ export default function Mindful() {
     }
     setDescription('Focus on the circles breathing in and out');
     setMeditating(true);
-    setTimer(8);
+    setTimer(6);
     clearInterval(timerInterval);
     timerInterval = setInterval(() => {
       setTimer(time => time - 1);
     }, 1000);
     interval = setInterval(() => {
       clearInterval(timerInterval);
-      setTimer(8);
+      setTimer(6);
       timerInterval = setInterval(() => {
         setTimer(time => time - 1);
       }, 1000)
       console.log(decreasing);
       setDecreasing(prevState => !prevState);
-    }, 8000);
+    }, 6000);
   }
 
   const endMeditation = () => {
@@ -45,7 +45,7 @@ export default function Mindful() {
     if (timerInterval) {
       clearInterval(timerInterval);
     }
-    setTimer(8);
+    setTimer(6);
   }
 
   return (

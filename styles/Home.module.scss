@@ -1,15 +1,43 @@
 .container {
   width: 100vw;
   height: 100vh;
-  background-image: url('/index_background.png');
+  background-image: url("/index_background.png");
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+
+.wrapper {
+  position: absolute;
+  left: 5%;
+  top: 12.5%;
+  width: 1116px;
+  height: 445.22px;
+
+}
+
+.points {
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  max-width: 50%;
+  height: auto;
 }
 
 @media only screen and (max-width: 600px) {
   .container {
     width: 100vw;
-    background: linear-gradient(164.26deg, #16374E -1.68%, #010D15 10.69%, #010D15 80.52%, #1F394A 126.01%);
+    background: linear-gradient(
+      164.26deg,
+      #16374e -1.68%,
+      #010d15 10.69%,
+      #010d15 80.52%,
+      #1f394a 126.01%
+    );
   }
 
+  .wrapper {
+    width: 388px;
+    height: 154.79px;
+  }
 }

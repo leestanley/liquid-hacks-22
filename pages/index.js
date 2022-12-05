@@ -2,6 +2,10 @@ import React from 'react';
 import Head from 'next/head';
 import UserContext from '../contexts/UserContext';
 import styles from '../styles/Home.module.scss';
+import Image from "next/image";
+
+import Points from '../public/points.svg'
+
 
 export default function Home() {
   //const context = React.useContext(UserContext);
@@ -66,7 +70,7 @@ export default function Home() {
         <input
           placeholder="Enter your IGN"
           onChange={handleInputChange}
-          value={values.username} 
+          value={values.username}
         ></input>
         <button
           type="submit"
@@ -75,6 +79,11 @@ export default function Home() {
           START
         </button>
       </form>
+      <div className={styles.wrapper}>
+        <Image src={'/hero-text.png'} alt="Hero" fill />
+      </div>
+      <img className={styles.points} src={Points} />
+
     </div>
   )
 }

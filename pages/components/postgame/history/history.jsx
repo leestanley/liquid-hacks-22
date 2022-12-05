@@ -17,6 +17,7 @@ const History = (props) => {
           toxicscore={0}
           tiltscore={23}
           winloss={true}
+          date={"Dec 3 9:21PM"}
         />
         <Matches
           map="Split"
