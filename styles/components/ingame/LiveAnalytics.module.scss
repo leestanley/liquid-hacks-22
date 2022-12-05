@@ -1,0 +1,14 @@
+.container {
+  width: calc(30vw - 10px);
+  height: 40vw;
+  background-color: red; 
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    position: relative;
+    width: 90vw;
+    height: 60vw;
+    margin-top: 2rem;
+  }
+}

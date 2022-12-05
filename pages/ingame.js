@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../styles/InGame.module.scss';
 import Header from './components/common/header/header.jsx';
 import Camera from './components/ingame/camera.jsx';
+import LiveAnalytics from './components/ingame/liveanalytics.jsx';
 import Detections from './components/ingame/detections.jsx';
 
 export default function InGame() {
@@ -20,11 +21,14 @@ export default function InGame() {
   return (
     <div className={styles.container}>
       <Header />
-      <Camera
-        setData={setData}
-        setHasFace={setHasFace}
-        setEmotions={setEmotions}
-      />
+      <div className={styles.mainContainer}>
+        <Camera
+          setData={setData}
+          setHasFace={setHasFace}
+          setEmotions={setEmotions}
+        />
+        <LiveAnalytics />
+      </div>
       <Detections hasFace={hasFace} />
     </div>
   )
