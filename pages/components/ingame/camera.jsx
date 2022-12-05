@@ -298,6 +298,10 @@ const Camera = (props) => {
         const video = document.getElementsByTagName('video')[0];
         if (video && canvas && imageCanvas && image && webcamRef.current) {
           const canvasDetections = await faceapi.detectSingleFace(video, new faceapi.TinyFaceDetectorOptions());//.withFaceExpressions();
+
+          if (canvasDetections) {
+            props.setHasFace(true);
+          }
           
           if (canvasDetections && video && canvas && imageCanvas && image && webcamRef.current) {
             canvas.getContext('2d').clearRect(0, 0, canvas.width, canvas.height);

@@ -2,6 +2,7 @@ import React from 'react';
 import styles from '../styles/InGame.module.scss';
 import Header from './components/common/header/header.jsx';
 import Camera from './components/ingame/camera.jsx';
+import Detections from './components/ingame/detections.jsx';
 
 export default function InGame() {
   const [emotions, setEmotions] = React.useState({
@@ -14,14 +15,17 @@ export default function InGame() {
     disgusted: 0
   });
   const [data, setData] = React.useState([]);
+  const [hasFace, setHasFace] = React.useState(false);
 
   return (
     <div className={styles.container}>
       <Header />
       <Camera
         setData={setData}
+        setHasFace={setHasFace}
         setEmotions={setEmotions}
       />
+      <Detections hasFace={hasFace} />
     </div>
   )
 }
