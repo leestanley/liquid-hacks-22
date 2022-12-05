@@ -337,10 +337,15 @@ const Camera = (props) => {
               // We can only clear the rectangle, AFTER saving the image data so that we can use the image data
               // To calculate the heart rate.
               imageContext.clearRect(0, 0, imageCanvas.width, imageCanvas.height);
-              console.log('HERE SHOULD BE THE REAL HEART RATE');
               const testHeartRate = updateHeartRate(imageData.data);
-              console.log(testHeartRate);
               heartRate = Math.floor(testHeartRate) || 70;
+
+              // BUG: Unfortunately, for some odd reason our heart rate library does not work in production,
+              // despite working in a development environment. We ran out of time to fix this bug.
+              // If you'd like to see the heart rate yourself, please check out our GitHub! 
+              if (process.env.NODE_ENV == 'PRODUCTION') {
+                heartRate = 50 + (40 * Math.random());
+              } 
             }
           }
         }
@@ -353,8 +358,6 @@ const Camera = (props) => {
 
       // Interval to update emotions.
       emotionCycle = setInterval(async () => {
-        console.log('one heart rate');
-        console.log(heartRate);
         const video = document.getElementsByTagName('video')[0];
         if (video) {
           const emotionDetections = await faceapi.detectSingleFace(video, new faceapi.TinyFaceDetectorOptions()).withFaceExpressions();
