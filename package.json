@@ -27,6 +27,7 @@
     "react": "18.2.0",
     "react-charts": "^2.0.0-beta.7",
     "react-dom": "18.2.0",
+    "react-modal": "^3.16.1",
     "react-speech-recognition": "^3.10.0",
     "react-toastify": "^9.1.1",
     "react-webcam": "^7.0.1",

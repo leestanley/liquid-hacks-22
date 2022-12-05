@@ -1,6 +1,6 @@
 import React from 'react';
 import { Kanit } from '@next/font/google';
-import UserContext from '../contexts/UserContext';
+import { UserContext } from '../contexts/UserContext';
 import 'regenerator-runtime';
 
 import '../styles/globals.css';
@@ -11,7 +11,13 @@ const kanit = Kanit({
 })
 
 function MyApp({ Component, pageProps }) {
-  const [user, setUser] = React.useState();
+  const [user, setUser] = React.useState({
+    name: '',
+    level: '',
+    rank: '',
+    image: '',
+    region: 'NA',
+  });
 
   return (
     <UserContext.Provider value={{ user, setUser }}>

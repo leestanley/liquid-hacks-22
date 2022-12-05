@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Router from "next/router";
+import {UserContext} from '../../../../contexts/UserContext.js';
 
 import styles from "../../../../styles/components/common/header/NavBar.module.scss";
 import { useRouter } from "next/router";
@@ -8,13 +10,20 @@ import { useRouter } from "next/router";
 const NavBar = (props) => {
   const router = useRouter();
   const path = router?.asPath;
+  const user = React.useContext(UserContext);
+
+  React.useEffect(() => {
+    if (!user.user.name) {
+      Router.push('/');
+    }
+  }, []);
 
   return (
     <div className={styles.container}>
       <div className={styles.name}>
         <img
           src={
-            "https://media.valorant-api.com/playercards/8edf22c5-4489-ab41-769a-07adb4c454d6/smallart.png"
+            user.user.image
           }
           width={125}
           height={125}
@@ -22,8 +31,8 @@ const NavBar = (props) => {
           className={styles.icon}
         />
         <div className={styles.col}>
-          <h1>Snu#001</h1>
-          <span>Level 230 | Gold 1 | NA </span>
+          <h1>{user.user.name}</h1>
+          <span>Level {user.user.level} | {user.user.rank ? user.user.rank : 'Unranked'} | {user.user.region} </span>
         </div>
       </div>
       <div className={styles.navigator}>

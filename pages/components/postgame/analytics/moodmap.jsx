@@ -213,9 +213,9 @@ const MoodMap = (props) => (
     <div className={styles.timeLine}>
       <div className={styles.line}></div>
       <div className={styles.lineMarkers}>
-        <h2>{props.startDate}</h2>
+        <h2>Older</h2>
         <p>Games over time</p>
-        <h2>{props.endDate}</h2>
+        <h2>Newer</h2>
       </div>
     </div>
     <Canvas
