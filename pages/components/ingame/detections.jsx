@@ -2,6 +2,8 @@ import React from 'react';
 import VoiceIcon from './assets/voice.svg';
 import CameraIcon from './assets/camera.svg';
 import BrainIcon from './assets/brain.svg';
+import SkipIcon from './assets/skip.svg';
+import Link from 'next/link';
 
 import styles from '../../../styles/components/ingame/Detections.module.scss';
 
@@ -53,6 +55,9 @@ function failVideo(error) {
           {props.hasFace ? <p>Face Detected</p> : <p className={styles.failure}>Not Detected</p>}
         </div>
       </div>
+      <Link href="/postgame">
+        <img src={SkipIcon} class={styles.skip}/>
+      </Link>
     </div>
   );
 }
