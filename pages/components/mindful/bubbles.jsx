@@ -4,6 +4,8 @@ import { Canvas, useFrame } from '@react-three/fiber';
 
 import styles from '../../../styles/components/mindful/Bubbles.module.scss';
 
+let scale = 1;
+
 // Sample data is in the form of an array of tuples
 // Each tuple contains the following values
 // [mood, weight, location between start / end]
@@ -88,7 +90,7 @@ function onCreated(state) {
 
 /** ========== END HELPER FUNCTIONS ========== **/
 
-function Spheres({count, color, sampleData }) {
+function Spheres({decreasing, meditating, sampleData }) {
   const angryMesh = React.useRef();
   const disgustedMesh = React.useRef();
   const fearfulMesh = React.useRef();
@@ -143,28 +145,22 @@ function Spheres({count, color, sampleData }) {
     })
     return tempSphereData;
   }, [sampleData]);
-  let scale = 10;
-  let decreasing = true;
   //let incrementer = 1;
 
   useFrame(state => {
     for (const [key, dataArray] of Object.entries(sphereData)) {
       dataArray.forEach((particle, i) => {
-        if (decreasing) {
+        if (decreasing && meditating && scale > 1) {
           scale -= (scale / 3000)
 
           //scale -= incrementer / 100;
           //incrementer *= 0.997;
-        } else {
+        } else if (!decreasing && meditating && scale < 10) { 
           scale += (scale / 3000)
           //scale += incrementer / 100;
           //incrementer /= 0.997;
-        }
-        if (scale <= 1) {
-          decreasing = false;
-        }
-        if (scale >= 10) {
-          decreasing = true;
+        } else if (!meditating && scale > 1) {
+          scale -= (scale/3000);
         }
         let {time, xFactor, yFactor, zFactor  } = particle;
 
@@ -259,7 +255,7 @@ const Bubbles = (props) => (
       gl={CANVAS_GL_SETTINGS}
       onCreated={onCreated}
     >
-      <Spheres count={2} color={"#8DFFFF"} sampleData ={sampleData} />
+      <Spheres decreasing={props.decreasing} meditating={props.meditating} sampleData ={sampleData} />
       <ambientLight intensity={AMBIENT_LIGHT_INTENSITY} />
       <pointLight position={[POINT_LIGHT_X, POINT_LIGHT_Y, POINT_LIGHT_Z]} intensity={POINT_LIGHT_INTENSITY} />
     </Canvas>
