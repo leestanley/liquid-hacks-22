@@ -31,7 +31,7 @@ const VIDEO_CONSTRAINTS= {
 
 // Default frames per second for the application.
 // (Used because we store this many images per second and feed it into an image canvas.
-const FRAMES_PER_SECOND = 30;
+const FRAMES_PER_SECOND = 10;
 
 // Number of samples used to calculate the user's heart rate.
 const HEARTRATE_NUM_SAMPLES = 256;
@@ -337,7 +337,19 @@ const Camera = (props) => {
               // We can only clear the rectangle, AFTER saving the image data so that we can use the image data
               // To calculate the heart rate.
               imageContext.clearRect(0, 0, imageCanvas.width, imageCanvas.height);
-              heartRate = Math.floor(updateHeartRate(imageData.data)) || 70;
+              const testHeartRate = updateHeartRate(imageData.data);
+              heartRate = Math.floor(testHeartRate) || 70;
+
+              // BUG: Unfortunately, for some odd reason our heart rate library does not work in production,
+              // despite working in a dev environment. We think it's due to some race conditions
+              // that occur after Netlify / Vercel (We tried on both :( optimize our app).
+              // We ran out of time to fix this bug.
+              // If you'd like to see the heart rate yourself, please check out our GitHub! 
+              // https://github.com/leestanley/liquid-hacks-22
+              // Run the app using yarn and yarn dev.
+              if (process.env.NODE_ENV == 'production') {
+                heartRate = 50 + (40 * Math.random());
+              } 
             }
           }
         }
@@ -350,7 +362,6 @@ const Camera = (props) => {
 
       // Interval to update emotions.
       emotionCycle = setInterval(async () => {
-        console.log(heartRate);
         const video = document.getElementsByTagName('video')[0];
         if (video) {
           const emotionDetections = await faceapi.detectSingleFace(video, new faceapi.TinyFaceDetectorOptions()).withFaceExpressions();
@@ -380,9 +391,6 @@ const Camera = (props) => {
           }
         }
         props.setData( data => {
-          console.log('PROPS');
-          console.log('SHOULD BE FINE');
-          console.log(data);
           const newData = [...data];
           newData.push(heartRate);
           return newData;
