@@ -11,7 +11,7 @@ const LiveAnalytics = (props) => {
     <div className={styles.container}>
       <TiltDisplay />
       <SpeechDisplay />
-      <HeartDisplay />
+      <HeartDisplay plot={props.data}/>
     </div>
   );
 }

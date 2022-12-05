@@ -52,7 +52,7 @@ function failVideo(error) {
         <img src={BrainIcon} />
         <div className={styles.description}>
           <h2>AI</h2>
-          {props.hasFace ? <p>Face Detected</p> : <p className={styles.failure}>Not Detected</p>}
+          {videoConnected ? <p>Face Detected</p> : <p className={styles.failure}>Not Detected</p>}
         </div>
       </div>
       <Link href="/postgame">
