@@ -341,9 +341,13 @@ const Camera = (props) => {
               heartRate = Math.floor(testHeartRate) || 70;
 
               // BUG: Unfortunately, for some odd reason our heart rate library does not work in production,
-              // despite working in a development environment. We ran out of time to fix this bug.
+              // despite working in a dev environment. We think it's due to some race conditions
+              // that occur after Netlify / Vercel (We tried on both :( optimize our app).
+              // We ran out of time to fix this bug.
               // If you'd like to see the heart rate yourself, please check out our GitHub! 
-              if (process.env.NODE_ENV == 'PRODUCTION') {
+              // https://github.com/leestanley/liquid-hacks-22
+              // Run the app using yarn and yarn dev.
+              if (process.env.NODE_ENV == 'production') {
                 heartRate = 50 + (40 * Math.random());
               } 
             }
