@@ -6,21 +6,6 @@ import MoodIcon from './assets/mood_icon.svg';
 
 import styles from '../../../../styles/components/postgame/analytics/MoodMap.module.scss';
 
-// Sample data is in the form of an array of tuples
-// Each tuple contains the following values
-// [mood, weight, location between start / end]
-const sampleData = [
-  ['angry', 0.1, 0.1, Math.random() * 100],
-  ['neutral', 0.2, 0.2, Math.random() * 100],
-  ['angry', 0.4, 0.3, 0],
-  ['neutral', 0.6, 0.4, Math.random() * 100],
-  ['happy', 0.7, 0.5, Math.random() * 100],
-  ['surprised', 0.5, 0.6, Math.random() * 100],
-  ['fearful', 0.5, 0.7, Math.random() * 100],
-  ['sad', 0.5, 0.8, 0],
-  ['disgusted', 0.6, 1, Math.random() * 100],
-]
-
 /** ========== CONSTANTS ========== **/
 
 // Map representing the three js colors
@@ -87,12 +72,12 @@ function Spheres({count, color, sampleData }) {
       const sizeFactor = dataEntry[1];
       const locationFactor = dataEntry[2];
 
+      const time = Math.random() * 360;
+      const xFactor = (Math.random() * 50) - 20;
+      const yFactor = (Math.random() * 50) - 20;
+      const zFactor = (Math.random() * 50) - 20;
 
-      const t = Math.random() * 100;
-      const factor = 20 + Math.random() * 100;
-      const speed = 0.01 + Math.random() / 200;
-
-      const newObject = { sizeFactor, t, factor, speed, locationFactor }
+      const newObject = { sizeFactor, time, xFactor, yFactor, zFactor, locationFactor }
 
       switch (dataEntry[0]) {
         case 'angry':
@@ -124,7 +109,12 @@ function Spheres({count, color, sampleData }) {
   useFrame(state => {
     for (const [key, dataArray] of Object.entries(sphereData)) {
       dataArray.forEach((particle, i) => {
-        let { sizeFactor, t, factor, speed, xFactor, yFactor, zFactor, locationFactor } = particle; 
+        let { sizeFactor, time, xFactor, yFactor, zFactor, locationFactor } = particle; 
+
+        time = particle.time += (0.03 + (0.002 * sizeFactor));
+        const y = (Math.cos(time) + Math.sin(time * 2)) / ((0.2 / sizeFactor));
+        const x = (Math.sin(time) + Math.cos(time * 1)) / ((0.1 / sizeFactor));
+        const z = (Math.sin(time) + Math.cos(time * 2)) / ((0.6 / sizeFactor));
         
         let location = 0
         if (locationFactor < 0.5) {
@@ -133,7 +123,11 @@ function Spheres({count, color, sampleData }) {
           location = 100 * (locationFactor - 0.5) * 2
         }
         
-        sphereObject.position.set(location, 0, 0);
+        sphereObject.position.set(
+          location + xFactor + x,
+          yFactor + y - 10,
+          zFactor + z,
+        );
 
         // Set the size of the sphere
         const size = sizeFactor * 10 + 2.5;
@@ -229,7 +223,7 @@ const MoodMap = (props) => (
       gl={CANVAS_GL_SETTINGS}
       onCreated={onCreated}
     >
-      <Spheres count={2} color={"#8DFFFF"} sampleData ={sampleData} />
+      <Spheres count={2} color={"#8DFFFF"} sampleData ={props.sphereData} />
       <ambientLight intensity={AMBIENT_LIGHT_INTENSITY} />
       <pointLight position={[POINT_LIGHT_X, POINT_LIGHT_Y, POINT_LIGHT_Z]} intensity={POINT_LIGHT_INTENSITY} />
     </Canvas>

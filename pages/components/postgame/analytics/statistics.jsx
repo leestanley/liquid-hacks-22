@@ -4,11 +4,12 @@ import Toxicity from './toxicity';
 
 import styles from '../../../../styles/components/postgame/analytics/Statistics.module.scss';
 
-const Statistics = ({ data }) => (
+const Statistics = (props) => {
+return(
   <div className={styles.container}>
-    <Toxicity />
-    <HeartRate />
+    <Toxicity toxicity={props.toxicData} />
+    <HeartRate heartrate={props.heartRateData}/>
   </div>
-);
+)};
 
 export default Statistics;

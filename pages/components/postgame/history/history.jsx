@@ -7,6 +7,7 @@ const History = (props) => {
   return (
     <div className={styles.container}>
       <div className={styles.innerContainer}>
+<<<<<<< HEAD
         <Matches
           map="Split"
           agent="Sova"
@@ -74,6 +75,22 @@ const History = (props) => {
           tiltscore={23}
           winloss={false}
         />
+=======
+        {props.matches.map(match => 
+          <Matches
+            map={match.map}
+            mode={match.mode}
+            agent={match.agent}
+            agentimage={match.agentCard}
+            kdstat={match.kd}
+            moodstat={match.variance}
+            bpmstat={match.bpm}
+            toxicscore={match.toxicity}
+            tiltscore={match.score}
+            winloss={match.win}
+          />
+        )}
+>>>>>>> 4fbdcc9cd9695cd451be7f6631bbc11171e0c65e
       </div>
     </div>
   );
