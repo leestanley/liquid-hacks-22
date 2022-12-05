@@ -380,6 +380,9 @@ const Camera = (props) => {
           }
         }
         props.setData( data => {
+          console.log('PROPS');
+          console.log('SHOULD BE FINE');
+          console.log(data);
           const newData = [...data];
           newData.push(heartRate);
           return newData;
