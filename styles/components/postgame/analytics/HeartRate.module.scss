@@ -2,6 +2,8 @@
   aspect-ratio: 3 / 2.5;
   width: calc(50% - 1rem);
   position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .container::before {
@@ -48,4 +50,44 @@
     font-weight: 300;
     font-size: 0.9rem;
   }
+}
+
+.chart {
+  z-index: 700;
+  width: 100%;
+  height: 100%;
+}
+
+.chartContainer {
+  margin-top: 6rem;
+  position: relative;
+  width: 80%;
+  height: calc(80% - 5rem);
+  padding: 20px;
+}
+
+.chartContainer:before, .chartContainer:after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: -2px;
+  
+}
+.chartContainer:before {
+  top: -2px;
+  width: 2px;
+  background-image: -webkit-gradient(linear, 0 100%, 0 0, from(white), to(transparent));
+  background-image: -webkit-linear-gradient(transparent, white);
+  background-image: -moz-linear-gradient(transparent, white);
+  background-image: -o-linear-gradient(transparent, white);
+  background: linear-gradient(180deg, #FFFFFF 1.11%, rgba(248, 248, 247, 0.966449) 4.68%, rgba(52, 41, 18, 0) 97.48%);
+}
+.chartContainer:after {
+  right: -2px;
+  height: 2px;
+  background-image: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(transparent));
+  background-image: -webkit-linear-gradient(left, white, transparent);
+  background-image: -moz-linear-gradient(left, white, transparent);
+  background-image: -o-linear-gradient(left, white, transparent);
+  background: linear-gradient(270deg, #FFFFFF 1.11%, rgba(248, 248, 247, 0.966449) 4.68%, rgba(52, 41, 18, 0) 97.48%);
 }

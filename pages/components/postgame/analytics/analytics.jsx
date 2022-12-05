@@ -20,17 +20,26 @@ const sampleData = [
 ]
 
 const Analytics = (props) => {
+  const [toxicData, setToxicData] = React.useState([])
+  const [heartRateData, setHeartRateData] = React.useState([])
   const [sphereData, setSphereData] = React.useState([])
 
   React.useEffect(() => {
+    const newToxicData = [];
+    const newHeartRateData =[];
     const newSphereData = []
     props.matches.forEach((match, i) => {
       Object.entries(match.emotions).forEach(entry => {
+
         const [emotion, weight] = entry;
         newSphereData.push([emotion, weight, (i / (props.matches.length - 1))])
       });
+      newToxicData.push(match.toxicity);
+      newHeartRateData.push(match.bpm)
     })
     setSphereData(newSphereData);
+    setToxicData(newToxicData);
+    setHeartRateData(newHeartRateData);
   }, [props.matches])
 
   return (
@@ -40,7 +49,7 @@ const Analytics = (props) => {
         endDate={[props.endDate]}
         sphereData={sphereData}
       />
-      <Statistics />
+      <Statistics heartRateData={heartRateData} toxicData={toxicData}/>
     </div>
   );
 }
