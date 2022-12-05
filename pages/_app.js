@@ -1,6 +1,7 @@
 import React from 'react';
 import { Kanit } from '@next/font/google';
 import UserContext from '../contexts/UserContext';
+import 'regenerator-runtime';
 
 import '../styles/globals.css';
 

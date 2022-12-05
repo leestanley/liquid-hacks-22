@@ -27,9 +27,9 @@ export default function InGame() {
           setHasFace={setHasFace}
           setEmotions={setEmotions}
         />
-        <LiveAnalytics />
+        <LiveAnalytics data={data} />
       </div>
-      <Detections hasFace={hasFace} />
+      <Detections dahasFace={hasFace} />
     </div>
   )
 }

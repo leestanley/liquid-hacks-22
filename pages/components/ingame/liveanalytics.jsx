@@ -1,9 +1,7 @@
 import React from 'react';
-import VoiceIcon from './assets/voice.svg';
-import CameraIcon from './assets/camera.svg';
-import BrainIcon from './assets/brain.svg';
-import SkipIcon from './assets/skip.svg';
-import Link from 'next/link';
+import HeartDisplay from './heartdisplay.jsx';
+import SpeechDisplay from './speechdisplay.jsx';
+import TiltDisplay from './tiltdisplay.jsx';
 
 import styles from '../../../styles/components/ingame/LiveAnalytics.module.scss';
 
@@ -11,6 +9,9 @@ const LiveAnalytics = (props) => {
 
   return (
     <div className={styles.container}>
+      <TiltDisplay />
+      <SpeechDisplay />
+      <HeartDisplay plot={props.data}/>
     </div>
   );
 }
