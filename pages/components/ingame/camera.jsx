@@ -31,7 +31,7 @@ const VIDEO_CONSTRAINTS= {
 
 // Default frames per second for the application.
 // (Used because we store this many images per second and feed it into an image canvas.
-const FRAMES_PER_SECOND = 30;
+const FRAMES_PER_SECOND = 10;
 
 // Number of samples used to calculate the user's heart rate.
 const HEARTRATE_NUM_SAMPLES = 256;
