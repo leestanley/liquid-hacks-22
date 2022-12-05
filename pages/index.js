@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import UserContext from './contexts/UserContext';
-
+import UserContext from '../contexts/UserContext';
 import styles from '../styles/Home.module.scss';
 
 export default function Home() {

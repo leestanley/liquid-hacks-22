@@ -1,6 +1,6 @@
 import React from 'react';
 import { Kanit } from '@next/font/google';
-import UserContext from './contexts/UserContext';
+import UserContext from '../contexts/UserContext';
 
 import '../styles/globals.css';
 
