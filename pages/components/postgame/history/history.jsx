@@ -7,72 +7,20 @@ const History = (props) => {
   return (
     <div className={styles.container}>
       <div className={styles.innerContainer}>
-        <Matches
-          map="Split"
-          agent="Sova"
-          agentimage="https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png "
-          kdstat={0.59}
-          moodstat={25}
-          bpmstat={54}
-          toxicscore={0}
-          tiltscore={23}
-          winloss={true}
-        />
-        <Matches
-          map="Split"
-          agent="Sova"
-          agentimage="https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png "
-          kdstat={0.59}
-          moodstat={25}
-          bpmstat={54}
-          toxicscore={0}
-          tiltscore={23}
-          winloss={false}
-        />
-                <Matches
-          map="Split"
-          agent="Sova"
-          agentimage="https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png "
-          kdstat={0.59}
-          moodstat={25}
-          bpmstat={54}
-          toxicscore={0}
-          tiltscore={23}
-          winloss={true}
-        />
-        <Matches
-          map="Split"
-          agent="Sova"
-          agentimage="https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png "
-          kdstat={0.59}
-          moodstat={25}
-          bpmstat={54}
-          toxicscore={0}
-          tiltscore={23}
-          winloss={false}
-        />
-                <Matches
-          map="Split"
-          agent="Sova"
-          agentimage="https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png "
-          kdstat={0.59}
-          moodstat={25}
-          bpmstat={54}
-          toxicscore={0}
-          tiltscore={23}
-          winloss={true}
-        />
-        <Matches
-          map="Split"
-          agent="Sova"
-          agentimage="https://media.valorant-api.com/agents/320b2a48-4d9b-a075-30f1-1f93a9b638fa/displayicon.png "
-          kdstat={0.59}
-          moodstat={25}
-          bpmstat={54}
-          toxicscore={0}
-          tiltscore={23}
-          winloss={false}
-        />
+        {props.matches.map(match => 
+          <Matches
+            map={match.map}
+            mode={match.mode}
+            agent={match.agent}
+            agentimage={match.agentCard}
+            kdstat={match.kd}
+            moodstat={match.variance}
+            bpmstat={match.bpm}
+            toxicscore={match.toxicity}
+            tiltscore={match.score}
+            winloss={match.win}
+          />
+        )}
       </div>
     </div>
   );

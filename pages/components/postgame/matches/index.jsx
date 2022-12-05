@@ -29,7 +29,7 @@ const Matches = (props) => {
         </div>
       </div>
 
-      <button className={styles.comp}>COMPETITIVE</button>
+      <button className={styles.comp}>{props.mode.toUpperCase()}</button>
       <div className={styles.col}>
         <h2>{props.kdstat}</h2>
         <h3>KD</h3>
@@ -38,7 +38,7 @@ const Matches = (props) => {
 
       <div className={styles.col}>
         <h2>{props.moodstat + "%"}</h2>
-        <h3>Mood Variance</h3>
+        <h3>Mood</h3>
       </div>
       <div className={styles.col}>
         <h2>{props.bpmstat + "bpm"}</h2>
@@ -46,12 +46,12 @@ const Matches = (props) => {
       </div>
       <div className={styles.col}>
         <h2>{props.toxicscore}</h2>
-        <h3>Toxicity Score</h3>
+        <h3>Toxicity</h3>
       </div>
       <div className={styles.divider} />
       <div className={styles.col}>
         <h2 className={styles.untilt}>{props.tiltscore}</h2>
-        <h3 className={styles.bold}>Tilt Score</h3>
+        <h3 className={styles.bold}>Tilt</h3>
       </div>
     </div>
   );
