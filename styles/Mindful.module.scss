@@ -22,6 +22,12 @@
 .beginIcon {
   margin-top: 2rem;
   height: 3.75rem; 
+
+  transition: transform .2s;
+
+  &:hover {
+    transform: translateY(0.1rem);
+  }
 }
 
 .breatheState {
