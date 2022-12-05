@@ -4,10 +4,10 @@ body {
   margin: 0;
   color: white;
   font-family: Kanit, sans-serif;
-  background: linear-gradient(151.48deg, #010C14 41.09%, #061E30 87.76%);
-  background-color: #061E30;
-  background-repeat: no-repeat;
-  background-image: url("/postgame_stars.png");
+  /* background: linear-gradient(151.48deg, #010C14 41.09%, #061E30 87.76%); */
+  /* background-color: #061E30;
+  background-repeat: no-repeat; */
+  background-image: url("/postgame_stars.png"), linear-gradient(151.48deg, #010C14 41.09%, #061E30 87.76%); 
 }
 
 a {
@@ -17,14 +17,4 @@ a {
 
 * {
   box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
 }
