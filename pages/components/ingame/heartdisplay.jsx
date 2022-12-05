@@ -1,6 +1,7 @@
 import React from 'react';
 import HeartIcon from './assets/heart.svg';
 import { Chart } from 'react-charts';
+React.useLayoutEffect = React.useEffect;
 
 import styles from '../../../styles/components/ingame/HeartDisplay.module.scss';
 
