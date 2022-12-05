@@ -53,11 +53,13 @@ export default function PostGame() {
   return (
     <div className={styles.container}>
       <Header />
+      <div className={styles.infoContainer}>
       <Analytics
         matches={matches}
         startDate={'10.23.2022'}
         endDate={'10.24.2022'}/>
       <History matches={matches}/>
+      </div>
       <ToastContainer />
     </div>
   )

@@ -78,12 +78,14 @@ export default function Home() {
           ...values,
           formDisabled: false,
         }));
-        user.setUser(state => ({
-          ...state,
-          name: jsonData.data.name + '#' + jsonData.data.tag,
-          level: jsonData.data.account_level,
-          image: jsonData.data.card.small,
-        }));
+        if (jsonData.data.name && jsonData.data.tag && jsonData.data.account_level && jsonData.data.card.small) {
+          user.setUser(state => ({
+            ...state,
+            name: jsonData.data.name + '#' + jsonData.data.tag,
+            level: jsonData.data.account_level,
+            image: jsonData.data.card.small,
+          }));
+        }
         fetch(`https://api.henrikdev.xyz/valorant/v1/mmr/na/${name}/${tag}`).then((res) => res.json())
         .then((jsonData) => {
           console.log(jsonData);

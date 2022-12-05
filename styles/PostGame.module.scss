@@ -3,3 +3,17 @@
   flex-wrap: wrap;
   grid-template-rows: 50% 50%;
 }
+
+.infoContainer {
+  width: 100vw;
+  position: relative;
+  display: flex;
+  grid-template-rows: 50% 50%;
+}
+
+@media only screen and (max-width: 1200px) {
+  .infoContainer {
+    flex-wrap: wrap;
+  }
+
+}
