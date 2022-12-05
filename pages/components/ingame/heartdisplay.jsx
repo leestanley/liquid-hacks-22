@@ -48,7 +48,7 @@ const HeartDisplay = (props) => {
       <img src={HeartIcon} />
       <div>
         <h2>Heart Rate</h2>
-        <p>{props.plot[props.plot?.length - 1]} BPM</p>
+        <p>{props.plot ? props.plot[props.plot?.length - 1] : 70} BPM</p>
       </div>
       <div className={styles.heartChart}>
         <Chart data={data} axes={axes} series={series} getSeriesStyle={getSeriesStyle} />
