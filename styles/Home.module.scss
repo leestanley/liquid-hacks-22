@@ -55,6 +55,7 @@
     margin-bottom: 30px;
   }
   button {
+    cursor: pointer;
     background: #FF4A4A;
     color: white;
     width: 148px;
@@ -62,6 +63,11 @@
     border: none;
     margin-left: 20px;
     font-size: 1.8rem;
+    transition: 0.2s;
+
+    &:hover {
+      transform: scale(1.02);
+    }
   }
 }
 
