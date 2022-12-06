@@ -17,6 +17,7 @@ export default function InGame() {
   });
   const [data, setData] = React.useState([]);
   const [hasFace, setHasFace] = React.useState(false);
+  const [tilt, setTilt] = React.useState(0);
 
   return (
     <div className={styles.container}>
@@ -26,8 +27,9 @@ export default function InGame() {
           setData={setData}
           setHasFace={setHasFace}
           setEmotions={setEmotions}
+          setTilt={setTilt}
         />
-        <LiveAnalytics data={data} />
+        <LiveAnalytics data={data} tilt={tilt}/>
       </div>
       <Detections dahasFace={hasFace} />
     </div>

@@ -387,6 +387,18 @@ const Camera = (props) => {
               return newEmotions;
             })
             console.log(mood);
+            if (mood === 'neutral') {
+              props.setTilt(0);
+            }
+            else if (mood === 'happy') {
+              props.setTilt(1);
+            } else if (mood === 'surprised') {
+              props.setTilt(1);
+            } else {
+              props.setTilt(-1);
+            }
+
+
             setCurrentEmotion(emotion => mood);
           }
         }

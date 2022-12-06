@@ -7,7 +7,7 @@ const History = (props) => {
   return (
     <div className={styles.container}>
       <div className={styles.innerContainer}>
-        {props.matches.map(match => 
+        {props.matches ? props.matches.map(match => 
           <Matches
             map={match.map}
             mode={match.mode}
@@ -20,7 +20,7 @@ const History = (props) => {
             tiltscore={match.score}
             winloss={match.win}
           />
-        )}
+        ) : null}
       </div>
     </div>
   );
