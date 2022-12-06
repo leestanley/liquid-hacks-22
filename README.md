@@ -1,4 +1,6 @@
 ![Logo](https://i.imgur.com/whhEMtS.png)
+_Build for Liquid Hacks 3.0_
+
 ### Running Our Application
 
 First, run the development server:
@@ -10,6 +12,8 @@ yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can view the feature in production at https://tiltproof.vercel.app/.
 
 ## Background
 
