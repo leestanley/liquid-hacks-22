@@ -162,6 +162,7 @@ export default function Home() {
         <h2>A Note to Liquid Judges</h2>
         <p>Here's some instructions to help you out!</p>
         <ul>
+          <li>This app should be mobile responsive, but is best viewed on a desktop or laptop.</li><br />
           <li>This app currently only supports Valorant, the fastest growing esport, but we will be expanding it to work with all popular competitive games including League of Legends, Overwatch, and CS:GO.</li><br />
           <li>Log in with Snu#001. This is Stanley's personal Valorant account and he played some games recording data for you! It will let you explore the app without having to play games. </li> <br />
           <li>The In Game tab will show ML and heartrate working after you enable camera and audio. Saving your recorded data will not be possible unless a Valorant game is played. You can still view real data taken from Snu#001's most recent games on the Summary tab. </li> <br />
