@@ -15,7 +15,7 @@ const calculateTilt = (matches) => {
   let defaultTilt = 0;
   for (let match of matches) {
     if (match.score) {
-      defaultTilt -= parseInt(match.score);
+      defaultTilt += parseInt(match.score);
       console.log(defaultTilt);
     }
   }

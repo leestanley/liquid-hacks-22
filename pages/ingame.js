@@ -145,10 +145,10 @@ export default function InGame() {
           score -= 10;
         }
 
-        if (score >= 0) {
-          score = "+" + String(score);
+        if (score <= 0) {
+          score = "+" + -String(score);
         } else {
-          score = String(score);
+          score = -String(score);
         }
 
         const submitData = {
