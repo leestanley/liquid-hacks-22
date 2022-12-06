@@ -4,10 +4,11 @@ body {
   margin: 0;
   color: white;
   font-family: Kanit, sans-serif;
-  background: linear-gradient(151.48deg, #010C14 41.09%, #061E30 87.76%);
+  background: linear-gradient(151.48deg, #010c14 41.09%, #061e30 87.76%);
 
   /* background-repeat: no-repeat;  */
-  background-image: url("/postgame_stars.png"), linear-gradient(151.48deg, #010C14 41.09%, #061E30 87.76%); 
+  background-image: url("/postgame_stars.png"),
+    linear-gradient(151.48deg, #010c14 41.09%, #061e30 87.76%);
   width: 100vw;
   overflow-x: hidden;
 }
@@ -25,7 +26,6 @@ a {
   position: relative;
 }
 
-
 .textContent {
   position: absolute;
   left: 0;
@@ -36,6 +36,12 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(255,255,255,.1);
+  background-color: rgb(255, 255, 255, 0.1);
+  border-radius: 50%;
+
+  span {
+    padding: 39.5px;
     border-radius: 50%;
+    background: rgb(255,255,255,.1)
+  }
 }

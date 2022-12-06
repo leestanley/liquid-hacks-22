@@ -3,7 +3,7 @@ import { Kanit } from '@next/font/google';
 import { UserContext } from '../contexts/UserContext';
 import 'regenerator-runtime';
 
-import '../styles/globals.css';
+import '../styles/globals.scss';
 
 const kanit = Kanit({
   weight: ['300', '400', '500', '600'],
