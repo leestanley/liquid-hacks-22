@@ -1,6 +1,6 @@
 import React from 'react';
 import { db } from '../utils/firebase.js';
-import { collection, where, getDocs } from "firebase/firestore";
+import { collection, where, getDocs, query } from "firebase/firestore";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import {UserContext} from '../contexts/UserContext';
@@ -32,8 +32,10 @@ export default function PostGame() {
   const [matches, setMatches] = React.useState([]);
 
   const fetchUser = async () => {  
-    await getDocs(collection(db, 'users'), where("usernamel", "==", "Snu#001"))
-      .then((querySnapshot)=>{              
+    await getDocs(query(collection(db, 'users'), where("username", "==", user.user.name)))
+      .then((querySnapshot)=>{      
+        console.log('NAMEEE');       
+        console.log(user.user.name);
           const newData = querySnapshot.docs
               .map((doc) => ({...doc.data(), id:doc.id }));
           if (newData.length < 1) {

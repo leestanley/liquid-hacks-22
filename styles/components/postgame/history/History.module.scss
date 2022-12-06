@@ -29,6 +29,30 @@
   }
 }
 
+.filter {
+  margin-top: 20px;
+  z-index: 99999999999999;
+  display: flex;
+  width: 90%;
+  h2 {
+    cursor: pointer;
+    margin-right: 10px;
+    font-weight: 400;
+    font-size: 24px;
+    color: #464646;
+    transition: 0.2s;
+
+    &:hover {
+      color:#888888;
+    }
+  }
+}
+
+.activeH2 {
+  color: white !important;
+  border-bottom: 2px solid white;
+}
+
 @media only screen and (max-width: 1200px) {
   .container {
     flex-basis: 100%;

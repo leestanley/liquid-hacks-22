@@ -17,9 +17,7 @@ const TopBar = (props) => {
         <Link href="/postgame">
           <img className={styles.logo} src={Logo} alt="Logo"/>
         </Link>
-        <Link href="/postgame">
-        <img className={styles.centerButton} src={EndButton} alt="End button"/>
-      </Link>
+        <img onClick={props.clickEnd} className={styles.centerButton} src={EndButton} alt="End button"/>
       </div>
     );
   }
