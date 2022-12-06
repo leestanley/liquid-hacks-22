@@ -53,6 +53,11 @@
     font-style: italic;
     padding: 20px;
     margin-bottom: 30px;
+
+    &:focus {
+      outline: 1px solid white;
+      color: white;
+    }
   }
   button {
     cursor: pointer;
