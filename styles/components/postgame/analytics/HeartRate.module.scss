@@ -14,7 +14,7 @@
   bottom: 0;
   inset: 0;
   border-radius: 15px; 
-  padding: 3px; 
+  padding: 2px; 
   background: linear-gradient(239.43deg, rgba(127, 25, 207, 0.25) 4.75%, rgba(58, 182, 199, 0.154167) 37.03%, rgba(26, 132, 230, 0) 88.96%) border-box;
   -webkit-mask: 
       linear-gradient(#fff 0 0) content-box, 
@@ -90,4 +90,24 @@
   background-image: -moz-linear-gradient(left, white, transparent);
   background-image: -o-linear-gradient(left, white, transparent);
   background: linear-gradient(270deg, #FFFFFF 1.11%, rgba(248, 248, 247, 0.966449) 4.68%, rgba(52, 41, 18, 0) 97.48%);
+}
+
+
+.num {
+  position: absolute;
+  left: 3%;
+  top: 20%;
+  display: flex;
+  height: 70%;
+  justify-content: space-between;
+  flex-direction: column-reverse;
+
+  p {
+    font-size: 12px;
+  }
+}
+
+.xlabel {
+  position: absolute;
+  bottom: 2.5%;
 }
