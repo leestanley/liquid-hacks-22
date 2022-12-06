@@ -42,10 +42,10 @@ export default function InGame() {
         const endTime = Date.now();
         const match = jsonData.data[0];
 
-        if (parseInt(String(match.metadata.game_start) + "000") < startTime) {
-          toast.error("You need to play and end a Valorant game on this account while recording!", {
+        if (parseInt(String(match.metadata.game_start + match.metadata.game_length) + "000") < startTime) {
+          toast.error("You must play and complete a Valorant game before clicking the End button!", {
             position: "top-right",
-            autoClose: 10000,
+            autoClose: 15000,
             hideProgressBar: false,
             closeOnClick: true,
             pauseOnHover: true,
