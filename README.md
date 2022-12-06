@@ -3,7 +3,7 @@ _Built for Liquid Hacks 3.0_
 
 ### Running Our Application
 
-First, run the development server:
+First, run the development server in your terminal:
 
 ```bash
 npm run dev
@@ -11,9 +11,9 @@ npm run dev
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then, open [**http://localhost:3000**](http://localhost:3000) with your browser to see the result.
 
-You can view the feature in production at https://tiltproof.vercel.app/.
+You can view the feature in production at **https://tiltproof.vercel.app/**.
 
 ## Background
 
