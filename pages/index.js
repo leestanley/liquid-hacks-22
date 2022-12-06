@@ -163,9 +163,10 @@ export default function Home() {
         <p>Here's some instructions to help you out!</p>
         <ul>
           <li>This app currently only supports Valorant, the fastest growing esport, but we will be expanding it to work with all popular competitive games including League of Legends, Overwatch, and CS:GO.</li><br />
-          <li>Log in with Snu#001. This is Stanley's real and personal Valorant account and he played some games recording data for you! It will let you explore the app without having to play games. </li> <br />
-          <li>The In Game tab will show ML and heartrate working after you enable camera and audio. Saving your recorded data will not be possible unless a Valorant game is played by Snu#001. You can still view real data taken from Snu#001's most recent games / recordings on the Summary tab. </li> <br />
+          <li>Log in with Snu#001. This is Stanley's personal Valorant account and he played some games recording data for you! It will let you explore the app without having to play games. </li> <br />
+          <li>The In Game tab will show ML and heartrate working after you enable camera and audio. Saving your recorded data will not be possible unless a Valorant game is played. You can still view real data taken from Snu#001's most recent games on the Summary tab. </li> <br />
           <li>If you <b>really</b> want to save your own data onto our servers, you will need to use your own Valorant account and play your own Valorant game.</li><br />
+          <li>If you are concerned with privacy, don't worry. Unless you click END and successfully save the data, all data is local to your computer and will be wiped when you close the tab.</li> <br />
           <li>If you run into any bugs, refresh the page and try again! Comment on the bug thread on DevPost if you need more help!</li>
         </ul>
         <p>Thanks so much for visiting our application! Hope you enjoy!</p>
