@@ -10,7 +10,8 @@ import Image from "next/image";
 
 import Points from '../public/points.svg'
 
-const displayModal = process.env.NODE_ENV === 'production';
+const displayModal = false;
+//const displayModal = process.env.NODE_ENV === 'production';
 
 export default function Home() {
   const user = useContext(UserContext);
