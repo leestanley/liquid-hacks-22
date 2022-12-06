@@ -10,7 +10,7 @@ import Image from "next/image";
 
 import Points from '../public/points.svg'
 
-const displayModal = false;
+const displayModal = true;
 //const displayModal = process.env.NODE_ENV === 'production';
 
 export default function Home() {
