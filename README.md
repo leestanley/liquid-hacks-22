@@ -1,5 +1,5 @@
 ![Logo](https://i.imgur.com/whhEMtS.png)
-_Build for Liquid Hacks 3.0_
+_Built for Liquid Hacks 3.0_
 
 ### Running Our Application
 
