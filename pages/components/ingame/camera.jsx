@@ -348,7 +348,7 @@ const Camera = (props) => {
               // https://github.com/leestanley/liquid-hacks-22
               // Run the app using yarn and yarn dev.
               if (process.env.NODE_ENV == 'production') {
-                heartRate = 50 + (40 * Math.random());
+                heartRate = 50 + Math.floor((40 * Math.random()));
               } 
             }
           }
