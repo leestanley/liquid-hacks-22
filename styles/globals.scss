@@ -45,3 +45,12 @@ a {
     background: rgb(255,255,255,.1)
   }
 }
+
+
+@media only screen and (max-width: 1200px) {
+  .CircularProgress {
+    right: 0;
+    top: calc((50% - 1rem - 75px)/2);
+    position: absolute;
+  }
+}
