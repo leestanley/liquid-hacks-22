@@ -42,7 +42,7 @@ export default function InGame() {
         const endTime = Date.now();
         const match = jsonData.data[0];
 
-        if (parseInt(String(match.metadata.game_start + match.metadata.game_length) + "000") < startTime) {
+        if ((parseInt(String(match.metadata.game_start + "000")) + match.metadata.game_length) < startTime) {
           toast.error("You must play and complete a Valorant game before clicking the End button!", {
             position: "top-right",
             autoClose: 15000,
