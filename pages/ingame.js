@@ -9,6 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { UserContext } from '../contexts/UserContext';
 import {db} from '../utils/firebase.js';
 import { doc, getDocs, query, collection, where, addDoc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+import Router from "next/router";
 
 let startTime = 0;
 export default function InGame() {
@@ -55,7 +56,6 @@ export default function InGame() {
           return;
         }
         const player = match.players.all_players.find(element => element.name === name && element.tag === tag);
-        console.log(player);
 
         const agent = player.character;
         const agentCard = player.assets.agent.small
@@ -177,11 +177,37 @@ export default function InGame() {
               await addDoc(collection(db, 'users'), {
                 username: user.user.name,
                 matches: [submitData],
-              })
+              }).then(() => {
+                Router.push("/postgame");
+              }).catch((error) => {
+                console.log(error);
+                toast.error('Something bad happened!', {
+                  position: "top-right",
+                  autoClose: 10000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "dark",
+                })})
             } else {
               await updateDoc(doc(db, "users", newData[0].id), {
                 matches: arrayUnion(submitData),
-              });
+              }).then(() => {
+                Router.push("/postgame");
+              }).catch((error) => {
+                console.log(error);
+                toast.error('Something bad happened!', {
+                  position: "top-right",
+                  autoClose: 10000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "dark",
+                })});
             }
         }).catch((error) => {
           console.log(error);
@@ -232,7 +258,7 @@ export default function InGame() {
         <LiveAnalytics data={data} tilt={tilt}/>
       </div>
       <ToastContainer />
-      <Detections dahasFace={hasFace} />
+      <Detections clickEnd={clickEnd} dahasFace={hasFace} />
     </div>
   )
 }
