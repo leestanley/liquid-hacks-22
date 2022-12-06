@@ -29,7 +29,7 @@ const Matches = (props) => {
         </div>
       </div>
 
-      <button className={styles.comp}>{props.mode.toUpperCase()}</button>
+      <button className={styles.comp}>{props.mode ? props.mode.toUpperCase() : 'UNRATED'}</button>
       <div className={styles.col}>
         <h2>{props.kdstat}</h2>
         <h3>KD</h3>
