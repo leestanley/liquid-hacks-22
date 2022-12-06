@@ -35,6 +35,12 @@
   }
 }
 
+.mindButton {
+  position: relative;
+  cursor: pointer;
+  z-index: 99999999999999999999999999999;
+}
+
 .imagewrapper {
   height: 75px;
   width: 75px;

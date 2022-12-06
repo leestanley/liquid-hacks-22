@@ -45,9 +45,9 @@ const NavBar = (props) => {
          {user.user.overallTilt < 30 ? <p>You're doing great! Keep at it!</p>
           :  <p>We recommend you take a break or perform some breathing exercises to cool off.</p>}
        
-       {user.user.overallTilt >= 30 ? <Link href="/mindful">
-          <img className={styles.mindButton} src={mindButton} alt="Mindfulness button"/>
-        </Link> : null }
+       {user.user.overallTilt >= 30 ? <div className={styles.mindButton}><Link href="/mindful">
+          <img src={mindButton} alt="Mindfulness button"/>
+        </Link></div> : null }
         </div>
         </div>
         <div className={styles.circle}
