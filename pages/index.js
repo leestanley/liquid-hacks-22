@@ -63,7 +63,7 @@ export default function Home() {
         ...values,
         formDisabled: false,
       }));
-      toast.error("Please format your name in form of NAME#TAG. Note that only Valorant is currently supported.", {
+      toast.error("Please format your name in form of NAME#TAG. Note that only Valorant is currently supported. If you don't have one, try Snu#001 for a demo.", {
         position: "top-right",
         autoClose: 10000,
         hideProgressBar: false,
