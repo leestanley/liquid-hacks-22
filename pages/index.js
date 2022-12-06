@@ -148,21 +148,6 @@ export default function Home() {
         <meta name="description" content="mental health for gamers" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <form
-        onSubmit={handleSubmit}
-      >
-        <input
-          placeholder="Enter your IGN"
-          onChange={handleInputChange}
-          value={values.username}
-        ></input>
-        <button
-          type="submit"
-          className=""
-        >
-          START
-        </button>
-      </form>
       <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
@@ -182,10 +167,29 @@ export default function Home() {
         <p>Thanks so much for visiting our application! Hope you enjoy!</p>
       </Modal>
       <ToastContainer />
-      <div className={styles.wrapper}>
-        <Image src={'/hero-text.png'} alt="Hero" fill />
+      <div className={styles.outerContainer}>
+        <div className={styles.newWrapper}>
+          <Image src={'/hero-text.png'} alt="Hero" fill />
+        </div>
+        <div className={styles.innerContainer}>
+        <form className={styles.enterUsername}
+          onSubmit={handleSubmit}
+        >
+          <input
+            placeholder="Enter your IGN"
+            onChange={handleInputChange}
+            value={values.username}
+          ></input>
+          <button
+            type="submit"
+            className=""
+          >
+            START
+          </button>
+        </form>
+        <img className={styles.points} src={Points} />
+        </div>
       </div>
-      <img className={styles.points} src={Points} />
 
     </div>
   )

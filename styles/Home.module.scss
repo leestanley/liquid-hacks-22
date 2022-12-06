@@ -7,21 +7,62 @@
   position: relative;
 }
 
-.wrapper {
-  position: absolute;
-  left: 5%;
-  top: 12.5%;
-  width: 1116px;
-  height: 445.22px;
-
+.outerContainer {
+  position: relative;
+  height: 100vh;
+  width: 60vw;
+  padding-top: 10%;
+  padding-bottom: 10%;
+  padding-left: 10%;
 }
 
-.points {
+.innerContainer {
   position: absolute;
-  left: 5%;
-  bottom: 5%;
-  max-width: 50%;
-  height: auto;
+  top: 446px;
+  height: calc(100% - 446px);
+  left: 10%;
+
+  img {
+    position: absolute;
+    bottom: 0;
+    height: 178px;
+  }
+}
+
+.newWrapper {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  width: 1116px;
+  height: 446px;
+}
+
+.enterUsername {
+  position: absolute;
+  top: calc(((100% - 178px)/2) - 30px);
+  display: flex;
+  input {
+    height: 60px;
+    width: 584px;
+    background-color: black;
+    background: #010C15;
+    border: 1px solid #555555;
+    color: #5E5E5E;
+    font-weight: 300;
+    font-size: 1.8rem;
+    font-style: italic;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  button {
+    background: #FF4A4A;
+    color: white;
+    width: 148px;
+    height: 60px;
+    border: none;
+    margin-left: 20px;
+    font-size: 1.8rem;
+  }
 }
 
 .modal {
@@ -94,7 +135,7 @@
   background: linear-gradient(151.48deg, rgba(1, 12, 20, 0.5) 41.09%, rgba(6, 30, 48, 0.5) 87.76%);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
   .container {
     width: 100vw;
     background: linear-gradient(
@@ -104,10 +145,55 @@
       #010d15 80.52%,
       #1f394a 126.01%
     );
+    background-repeat: no-repeat;
+    min-height: 900px;
   }
 
-  .wrapper {
-    width: 388px;
-    height: 154.79px;
+  .newWrapper {
+    position: absolute;
+    left: calc(20%);
+    width: 600px;
+    height: 239px;
+    margin: 0;
+  }
+
+  .outerContainer {
+    width: 90%;
+    position: relative;
+    padding: 0;
+  }
+
+  .enterUsername {
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+
+    input {
+      text-align: center;
+      height: 60px;
+      width: 80%;
+      font-size: 1.4rem;
+    }
+    button {
+      font-size: 1.4rem;
+      max-width: 400px;
+      width: 80%;
+      height: 60px;
+      border: none;
+      margin-left: 20px;
+      font-size: 1.8rem;
+    }
+  }
+
+  .innerContainer {
+    top: 223px;
+    width: 100%;
+    height: auto;
+    min-height: 500px;
+
+    img {
+      left: 10%;
+      width: 80%;
+    }
   }
 }
