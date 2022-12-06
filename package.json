@@ -26,6 +26,7 @@
     "performance-now": "^2.1.0",
     "react": "18.2.0",
     "react-charts": "^2.0.0-beta.7",
+    "react-circular-gradient-progress": "^1.1.1",
     "react-dom": "18.2.0",
     "react-modal": "^3.16.1",
     "react-speech-recognition": "^3.10.0",

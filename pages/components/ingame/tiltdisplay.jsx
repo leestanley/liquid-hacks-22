@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import styles from '../../../styles/components/ingame/TiltDisplay.module.scss';
 import BrainIcon from './assets/brain.svg';
 
+
 let canUpdate = true;
 const TiltDisplay = (props) => {
   const [newTilt, setNewTilt] = React.useState(0);

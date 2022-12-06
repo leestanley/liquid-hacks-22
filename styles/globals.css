@@ -20,3 +20,20 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.CircularProgress {
+  position: relative;
+}
+
+
+.textContent {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 25px !important;
+  width: 150px !important;
+  height: 150px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

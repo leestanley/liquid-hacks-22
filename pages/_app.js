@@ -17,6 +17,7 @@ function MyApp({ Component, pageProps }) {
     rank: '',
     image: '',
     region: 'NA',
+    overallTilt: 0,
   });
 
   return (
