@@ -10,6 +10,7 @@ import Image from "next/image";
 
 import Points from '../public/points.svg'
 
+const displayModal = process.env.NODE_ENV === 'production';
 
 export default function Home() {
   const user = useContext(UserContext);
@@ -17,7 +18,9 @@ export default function Home() {
 
 
   React.useEffect(() => {
-    setIsOpen(true);
+    if (displayModal) {
+      setIsOpen(true);
+    }
   }, []);
 
   function closeModal() {

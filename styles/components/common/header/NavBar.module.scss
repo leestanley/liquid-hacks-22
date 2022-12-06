@@ -48,6 +48,44 @@
   border: 5px white solid;
 }
 
+.tiltText {
+  width: 60%;
+  text-align: right;
+  height: calc(100% - 50px);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  h2 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 2.8125rem;
+  }
+
+  p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  img {
+    height: 40px;
+    margin-top: 10px;
+    transition: 0.2s;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.tiltMeter {
+  height: 100%;
+  width: 600px;
+  position: absolute;
+  right: 5%;
+}
+
 .navigator {
   position: absolute;
   bottom: 1rem;

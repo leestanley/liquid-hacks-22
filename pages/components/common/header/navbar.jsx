@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import mindButton from './assets/mindButton.svg';
 import Router from "next/router";
 import {UserContext} from '../../../../contexts/UserContext.js';
 
@@ -33,6 +34,17 @@ const NavBar = (props) => {
         <div className={styles.col}>
           <h1>{user.user.name}</h1>
           <span>Level {user.user.level} | {user.user.rank ? user.user.rank : 'Unranked'} | {user.user.region} </span>
+        </div>
+      </div>
+      <div className={styles.tiltMeter}>
+        <div className={styles.tiltText}>
+          <div>
+        <h2>Very Tilted</h2>
+        <p>We recommend you take a break or perform some breathing exercises to cool off.</p>
+        <Link href="/mindful">
+          <img className={styles.mindButton} src={mindButton} alt="Mindfulness button"/>
+        </Link>
+        </div>
         </div>
       </div>
       <div className={styles.navigator}>
