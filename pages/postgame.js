@@ -15,23 +15,22 @@ export default function PostGame() {
   const [matches, setMatches] = React.useState([]);
 
   const fetchUser = async () => {  
-    toast.info("If you're a judge, log in with Snu#001.", {
-      position: "top-right",
-      autoClose: 10000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-
     await getDocs(collection(db, 'users'), where("usernamel", "==", "Snu#001"))
       .then((querySnapshot)=>{              
           const newData = querySnapshot.docs
               .map((doc) => ({...doc.data(), id:doc.id }));
           if (newData.length < 1) {
             toast.error("No matches found. Please click play.", {
+              position: "top-right",
+              autoClose: 10000,
+              hideProgressBar: false,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+              theme: "dark",
+            });
+            toast.info("If you're a judge, log in with Snu#001.", {
               position: "top-right",
               autoClose: 10000,
               hideProgressBar: false,
@@ -54,11 +53,13 @@ export default function PostGame() {
   return (
     <div className={styles.container}>
       <Header />
+      <div className={styles.infoContainer}>
       <Analytics
         matches={matches}
         startDate={'10.23.2022'}
         endDate={'10.24.2022'}/>
       <History matches={matches}/>
+      </div>
       <ToastContainer />
     </div>
   )

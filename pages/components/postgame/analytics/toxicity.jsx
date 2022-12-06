@@ -16,7 +16,7 @@ const Toxicity = (props) => {
       
       return [{
         label: 'Series 1',
-        data: newData
+        data: newData,
       }]
     }, 
     [props.toxicity]
