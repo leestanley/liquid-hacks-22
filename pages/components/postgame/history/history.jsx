@@ -19,7 +19,7 @@ const History = (props) => {
         <h2 className={filter === 'RUSH' ? styles.activeH2 : ''} onClick={() => {setFilter('RUSH')}}>Spike Rush</h2>
         <h2 className={filter === 'UNRATED' ? styles.activeH2 : ''} onClick={() => {setFilter('UNRATED')}}>Unrated</h2>
       </div>
-        {props.matches ? props.matches.map(match => 
+        {props.matches ? props.matches.slice(0).reverse().map(match => 
         {
           if (filter === 'ALL' || match.mode === filter) {
             return (
