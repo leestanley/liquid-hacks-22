@@ -7,7 +7,7 @@ import styles from '../../../../styles/components/common/header/Header.module.sc
 const Header = (props) => {
   return (
     <div className={styles.container}>
-      <TopBar />
+      <TopBar clickEnd={props.clickEnd}/>
       <NavBar />
     </div>
   );

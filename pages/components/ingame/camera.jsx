@@ -348,7 +348,7 @@ const Camera = (props) => {
               // https://github.com/leestanley/liquid-hacks-22
               // Run the app using yarn and yarn dev.
               if (process.env.NODE_ENV == 'production') {
-                heartRate = 50 + (40 * Math.random());
+                heartRate = 50 + Math.floor((40 * Math.random()));
               } 
             }
           }
@@ -387,6 +387,18 @@ const Camera = (props) => {
               return newEmotions;
             })
             console.log(mood);
+            if (mood === 'neutral') {
+              props.setTilt(0);
+            }
+            else if (mood === 'happy') {
+              props.setTilt(1);
+            } else if (mood === 'surprised') {
+              props.setTilt(1);
+            } else {
+              props.setTilt(-1);
+            }
+
+
             setCurrentEmotion(emotion => mood);
           }
         }

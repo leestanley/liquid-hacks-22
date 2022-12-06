@@ -41,14 +41,30 @@
  }
  h2 {
   margin: 0;
-  background: linear-gradient(57.23deg, #EF8405 0%, #FF0000 100.42%);
-  -webkit-background-clip: text;
   font-size: 1.5rem;
-  -webkit-text-fill-color: transparent;
+
  }
  p {
   font-weight: 300;
   font-size: 0.875rem;
   margin: 0;
  }
+}
+
+.poor {
+  background: linear-gradient(57.23deg, #EF8405 0%, #FF0000 20.42%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.neutral {
+  background: white;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.good {
+   background: linear-gradient(57.23deg, #26C740 0%, #1162FF 20.42%);
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
 }

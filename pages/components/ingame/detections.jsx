@@ -55,9 +55,7 @@ function failVideo(error) {
           {videoConnected ? <p>Face Detected</p> : <p className={styles.failure}>Not Detected</p>}
         </div>
       </div>
-      <Link href="/postgame">
-        <img src={SkipIcon} class={styles.skip}/>
-      </Link>
+      <img onClick={props.clickEnd} src={SkipIcon} class={styles.skip}/>
     </div>
   );
 }

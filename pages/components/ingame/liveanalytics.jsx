@@ -9,7 +9,7 @@ const LiveAnalytics = (props) => {
 
   return (
     <div className={styles.container}>
-      <TiltDisplay />
+      <TiltDisplay tilt={props.tilt}/>
       <SpeechDisplay />
       <HeartDisplay plot={props.data}/>
     </div>
